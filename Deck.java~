@@ -1,0 +1,64 @@
+import java.util.*; 
+class Deck { 
+// this line of code creates an array representing the numbers and letters on the cards. This array is made with the final keyword which means its values should and cannot be changed. The arrays name is capital because it is common practice when the keyword final is used. 
+public final String[] SUITS = { "Heart", "Diamond", "Clubs", "Spades" }; 
+//This array is made with the final keyword which means its values should and cannot be changed. It was made to represent the full length of a deck.The arrays name is capital because it is common practice when the keyword final is used.
+public final String[] RANKS = { "A_", "K_", "Q_", "J_", "10_", "9_", "8_", "7_", "6_", "5_", "4_", "3_", "2_" };
+
+// This is an array list made to represent the deck.
+public ArrayList<String> DeckFull =new ArrayList<String>();
+public static int DeckLength = 52; 
+// This is where the array list made to represent the deck gets its values.
+public Deck() { 
+
+for(int initialVar1 = 0; initialVar1 < SUITS.length; initialVar1++) 
+{ for(int initialVar2 = 0; initialVar2 < RANKS.length; initialVar2++) { 
+DeckFull.add(RANKS[initialVar2] + SUITS[initialVar1]); } }  }
+
+public Deck(ArrayList<String> DeckFull) {
+this.DeckFull = DeckFull;
+for(int initialVar1 = 0; initialVar1 < SUITS.length; initialVar1++) 
+{ for(int initialVar2 = 0; initialVar2 < RANKS.length; initialVar2++) { 
+DeckFull.add(RANKS[initialVar2] + SUITS[initialVar1]); } }  }
+
+
+// this was mainly used for testing purposes
+
+public void showDeck() 
+{ this.DeckFull  = DeckFull;
+ for(int i = 0; i < DeckLength; i++)
+ { System.out.println(DeckFull.get(i)); } } 
+
+public void showDeck(ArrayList<String> DeckFull) 
+{ this.DeckFull  = DeckFull;
+ for(int i = 0; i < DeckLength; i++)
+ { System.out.println(DeckFull.get(i)); } } 
+
+public void RemoveCard(String card)
+{
+this.DeckFull  = DeckFull;
+int size;
+size = DeckFull.size();
+for(int i = 0; i < size; i++){
+if (DeckFull.get(i) == card)
+{ DeckFull.remove(i);
+DeckLength = DeckLength- 1;
+
+}
+}
+
+}
+
+public String drawcard()
+{
+Random rand = new Random();
+int rand_num = rand.nextInt(22);
+
+String Card = DeckFull.get(rand_num);
+
+RemoveCard(Card);
+
+return Card;
+
+}
+}

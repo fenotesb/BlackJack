@@ -1,0 +1,92 @@
+import java.util.*; 
+
+public class BlackJack
+{
+  public int[] BreakUpCards(String[] HandForPlayer){
+    int[] ans = new int[2];
+String CardOne;
+String CardTwo;
+int CardOneVaule;
+int CardTwoVaule;
+//creates an array with both attrabiutes of the card and then gives me an int vaule for the numaerical vaule
+CardOne = HandForPlayer[0];
+String[] FirstCardinStrnig = CardOne.split("_", 2);
+String numberForCard1 =FirstCardinStrnig[0];
+if (numberForCard1 == "K"||numberForCard1 =="Q" ||numberForCard1 =="J")
+{
+    CardOneVaule = 10;  
+}
+if (numberForCard1 == "A")
+{
+    CardOneVaule = 1;  
+}
+else {
+int Cardnum1 = Integer.parseInt(numberForCard1);
+}
+
+CardTwo = HandForPlayer[1];
+String[] FirstCardinStrnig = CardOne.split("_", 2);
+String numberForCard1 =FirstCardinStrnig[0];
+if (numberForCard1 == "K"||numberForCard1 =="Q" ||numberForCard1 =="J")
+{
+    CardOneVaule = 10;  
+}
+if (numberForCard1 == "A")
+{
+    CardOneVaule = 1;  
+}
+else {
+int Cardnum2 = Integer.parseInt(numberForCard1);
+}
+
+ans [0] = Cardnum1;
+ans [1] = Cardnum2;
+return ans ;
+  }
+
+public static void main (String args[])
+{
+String  Name;
+
+Scanner scan = new Scanner(System.in);
+System.out.println("Welcome to a game of Black Jack\nWhat is your name? \n");
+Name = scan.nextLine();
+System.out.println("You entered: \n" + Name + "\n");
+
+Deck Gamedeck = new Deck();
+
+Gamedeck.showDeck();
+
+MyHand PlayerOneHand = new MyHand();
+
+PlayerOneHand.makeHand();
+PlayerOneHand.showHand();
+
+String[] HandForPlayerOne = PlayerOneHand.getHand();
+int[] RanksforHand =  BreakUpCards(HandForPlayerOne);
+
+int RankOne = RanksforHand[0];
+int RankTwo = RanksforHand[1];
+
+int score =RankOne + RankTwo;
+
+
+While (score <21) {
+
+System.out.println("This is Your current Total: " , score);
+System.out.println("Would You like to take a Hit? (Y or N)");
+String YesOrNoHit;
+YesOrNoHit = scan.nextLine();
+
+String NewCard;
+
+if (YesOrNoHit == 'Y')
+{
+  NewCard = Gamedeck.drawcard();
+  
+}
+}
+
+}
+//Player PlayerOne = new Player( Name,True );
+//Player PlayerTwo = new Player( Name,True );

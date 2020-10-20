@@ -1,0 +1,33 @@
+import java.util.*; 
+
+class MyHand extends Deck {
+  
+
+
+public MyHand ( ArrayList<String> DeckFull,  );
+
+String[] hand = new String[2];
+
+//creates a hand.
+public void makeHand(List<String> DeckFull) {
+//Creates the random spots people can get there hand from
+//first card
+int rand_int1 = rand.nextInt(52);
+//second card
+int rand_int2 = rand.nextInt(52);
+//make sure the same card is not taken
+while (rand_int1 == rand_int2) 
+rand_int2 = rand.nextInt(52);
+//Sets the hand
+this.hand[i] = fullDeck.get(rand_int1 ); 
+this.hand[i] = fullDeck.get(rand_int2 );
+// used to view what hand it is
+}
+}
+public String[] getHand(arrayList<String> DeckFull) {
+//the super keyword allows the hand classes method to access the deck 
+super.DeckFull = DeckFull;
+return this.hand;
+for( int card : hand) 
+System.out.println(hand);
+ }

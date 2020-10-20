@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class BlackJ
+{
+  
+public static void main()
+{
+String  Name;
+
+Scanner scan = new Scanner(System.in);
+System.out.println("Welcome to a game of Black Jack n/ what is your name/n");
+Name = scan.nextLine();
+System.out.println("You entered: \n" + Name + "\n");
+}}
