@@ -2,8 +2,6 @@ import java.util.*;
 import java.lang.String;
 
 
-//Creates a child class for deck called MyHand
-
 public class BlackJack
 {
   
